@@ -1,0 +1,65 @@
+﻿<Window x:Class="ProjektPVA1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjektPVA1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <TabControl TabStripPlacement="left" Margin="3">
+
+            <TabItem Header="Prodej">
+                <Grid Background="AliceBlue">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Grid.Column="0" Margin="2">
+                        <Label Content="Dostupné zboží"/>
+                        <ListBox Name="lblProduktyNaProdej" Height="350" Margin="1"/>
+                        <Button Name="btnPridejDoKosiku" Content="Přidat do košíku" Height="40" Margin="2"/>
+                    </StackPanel>
+
+                    <Border Grid.Column="1" BorderThickness="2" BorderBrush="DarkBlue">
+                        <StackPanel>
+                            <Label Content="Vybrané produkty"/>
+                            <TextBlock Text="Celkem: 0 Kč." Name="txtKosikCena" Margin="2"/>
+                            <Button Content="Odstranit všechny položky" Name="btnDeleteCart" Margin="2" Background="Aqua"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Sklad">
+                <DockPanel>
+                    <GroupBox Header="Přidat novou položku" DockPanel.Dock="top" Margin="0, 0, 0, 10">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Label Content="Název zboží"/>
+                                <TextBox Name="txtNovyProduktName" Width="150"/>
+                            </StackPanel>
+
+                            <StackPanel>
+                                <Label Content="Cena zboží (Kč.)"/>
+                                <TextBox Name="txtNovyProduktCena" Width="100"/>
+                            </StackPanel>
+
+                            <Button Name="btnPridatDoSkladu" Content="Přidat"/>
+                        </StackPanel>
+                    </GroupBox>
+
+                    <DataGrid Name="dgSklad" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="0, 0, 0, 10"/>
+                </DockPanel>
+            </TabItem>
+
+            <TabItem Header="Nastavení">
+                <Grid Background="#FFFFFF"/>
+
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
