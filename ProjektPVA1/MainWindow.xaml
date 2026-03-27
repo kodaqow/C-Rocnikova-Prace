@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektPVA1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="E-shop" Height="450" Width="800">
 
     <Grid>
-        <TabControl TabStripPlacement="left" Margin="3">
+        <TabControl TabStripPlacement="left" Margin="3,3,3,0">
 
             <TabItem Header="Prodej">
                 <Grid Background="AliceBlue">
@@ -20,12 +20,13 @@
                     <StackPanel Grid.Column="0" Margin="2">
                         <Label Content="Dostupné zboží"/>
                         <ListBox Name="lblProduktyNaProdej" Height="350" Margin="1"/>
-                        <Button Name="btnPridejDoKosiku" Content="Přidat do košíku" Height="40" Margin="2"/>
+                        <Button Name="btnPridejDoKosiku" Content="Přidat do košíku" Height="40" Margin="2" Click="btnPridejDoKosiku_Click"/>
                     </StackPanel>
 
                     <Border Grid.Column="1" BorderThickness="2" BorderBrush="DarkBlue">
                         <StackPanel>
                             <Label Content="Vybrané produkty"/>
+                            <ListBox Name="lbKosik" Height="250" DisplayMemberPath="Nazev"/>
                             <TextBlock Text="Celkem: 0 Kč." Name="txtKosikCena" Margin="2"/>
                             <Button Content="Odstranit všechny položky" Name="btnDeleteCart" Margin="2" Background="Aqua"/>
                         </StackPanel>

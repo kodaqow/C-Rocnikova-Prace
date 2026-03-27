@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,9 +17,18 @@ namespace ProjektPVA1
     /// </summary>
     public partial class MainWindow : Window
     {
+        ObservableCollection<Produkt> Sklad = new ObservableCollection<Produkt>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Sklad.Add(new Produkt("Brumík", 60, 50));
+            Sklad.Add(new Produkt("Kofola", 45, 40));
+            Sklad.Add(new Produkt("Vinea", 35, 50));
+            Sklad.Add(new Produkt("Kubík", 45, 40));
+
+            dgSklad.ItemsSource = Sklad;
         }
     }
 }
