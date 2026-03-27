@@ -48,7 +48,7 @@
                                 <TextBox Name="txtNovyProduktCena" Width="100"/>
                             </StackPanel>
 
-                            <Button Name="btnPridatDoSkladu" Content="Přidat"/>
+                            <Button Name="btnPridatDoSkladu" Content="Přidat" Click="btnPridatDoSkladu_Click"/>
                         </StackPanel>
                     </GroupBox>
 

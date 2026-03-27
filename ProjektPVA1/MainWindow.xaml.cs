@@ -30,5 +30,26 @@ namespace ProjektPVA1
 
             dgSklad.ItemsSource = Sklad;
         }
+
+        // tlacitko pridat do skladu
+        private void btnPridatDoSkladu_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNovyProduktName.Text) && double.TryParse(txtNovyProduktCena.Text, out double cena))
+            {
+                Sklad.Add(new Produkt(txtNovyProduktName.Text, cena, 10));
+                txtNovyProduktCena.Clear();
+                txtNovyProduktName.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Zadejte platný název a cenu produktu.");
+            }
+        }
+
+        // tlacitko pridat do kosiku
+        private void btnPridejDoKosiku_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
