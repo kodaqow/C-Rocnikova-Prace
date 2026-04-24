@@ -47,6 +47,11 @@
                                 <Label Content="Cena zboží (Kč.)"/>
                                 <TextBox Name="txtNovyProduktCena" Width="100"/>
                             </StackPanel>
+                            
+                            <StackPanel>
+                                <Label Content="Množství"/>
+                                <TextBox Name="txtNovyProduktMnozstvi" Width="100"/>
+                            </StackPanel>
 
                             <Button Name="btnPridatDoSkladu" Content="Přidat" Click="btnPridatDoSkladu_Click"/>
                         </StackPanel>
