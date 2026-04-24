@@ -28,7 +28,7 @@
                             <Label Content="Vybrané produkty"/>
                             <ListBox Name="lbKosik" Height="250" DisplayMemberPath="Nazev"/>
                             <TextBlock Text="Celkem: 0 Kč." Name="txtKosikCena" Margin="2"/>
-                            <Button Content="Odstranit všechny položky" Name="btnVymazKosik" Margin="2" Background="Aqua" Click="btnDeleteCart_Click"/>
+                            <Button Content="Odstranit všechny položky" Name="btnDeleteCart" Margin="2" Background="Aqua" Click="btnVymazKosik_Click"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -57,7 +57,11 @@
                         </StackPanel>
                     </GroupBox>
 
-                    <DataGrid Name="dgSklad" AutoGenerateColumns="True" CanUserAddRows="False" IsReadOnly="True" Margin="0, 0, 0, 10"/>
+                    <DataGrid Name="dgSklad" AutoGenerateColumns="False" Margin="0, 0, 0, 10" SelectionChanged="dgSklad_SelectionChanged">
+                        <DataGridTextColumn Header="Název produktu" Binding="{Binding Nazev}" Width="2*"/>
+                        <DataGridTextColumn Header="Cena produktu" Binding="{Binding Cena}" Width="1*"/>
+                        <DataGridTextColumn Header="Množství produktu" Binding="{Binding Mnozstvi}" Width="1*"/>
+                    </DataGrid>
                 </DockPanel>
             </TabItem>
 

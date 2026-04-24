@@ -35,7 +35,7 @@ namespace ProjektPVA1
         //tlacitko pridat do skladu
         private void btnPridatDoSkladu_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtNovyProduktName.Text) 
+            if (!string.IsNullOrEmpty(txtNovyProduktName.Text)
                 && double.TryParse(txtNovyProduktCena.Text, out double cena)
                 && int.TryParse(txtNovyProduktMnozstvi.Text, out int mnozstvi))
             {
@@ -56,8 +56,13 @@ namespace ProjektPVA1
 
         }
 
-        //tlacitko smazat z kosiku
-        private void btnDeleteCart_Click(object sender, RoutedEventArgs e)
+        //tlacitko vymazat kosik
+        private void btnVymazKosik_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dgSklad_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
