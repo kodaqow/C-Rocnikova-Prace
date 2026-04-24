@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjektPVA1"
         mc:Ignorable="d"
-        Title="E-shop" Height="450" Width="800">
+        Title="E-shop" Height="500" Width="800">
 
     <Grid>
         <TabControl TabStripPlacement="left" Margin="3,3,3,0">
@@ -19,7 +19,7 @@
 
                     <StackPanel Grid.Column="0" Margin="2">
                         <Label Content="Dostupné zboží"/>
-                        <ListBox Name="lblProduktyNaProdej" Height="350" Margin="1"/>
+                        <ListBox Name="lblProduktyNaProdej" DisplayMemberPath="nazev" Height="350" Margin="1"/>
                         <Button Name="btnPridejDoKosiku" Content="Přidat do košíku" Height="40" Margin="2" Click="btnPridejDoKosiku_Click"/>
                     </StackPanel>
 
@@ -28,7 +28,7 @@
                             <Label Content="Vybrané produkty"/>
                             <ListBox Name="lbKosik" Height="250" DisplayMemberPath="Nazev"/>
                             <TextBlock Text="Celkem: 0 Kč." Name="txtKosikCena" Margin="2"/>
-                            <Button Content="Odstranit všechny položky" Name="btnDeleteCart" Margin="2" Background="Aqua"/>
+                            <Button Content="Odstranit všechny položky" Name="btnVymazKosik" Margin="2" Background="Aqua" Click="btnDeleteCart_Click"/>
                         </StackPanel>
                     </Border>
                 </Grid>
@@ -38,17 +38,17 @@
                 <DockPanel>
                     <GroupBox Header="Přidat novou položku" DockPanel.Dock="top" Margin="0, 0, 0, 10">
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel>
+                            <StackPanel Margin="0 0 5 0">
                                 <Label Content="Název zboží"/>
                                 <TextBox Name="txtNovyProduktName" Width="150"/>
                             </StackPanel>
 
-                            <StackPanel>
+                            <StackPanel Margin="0 0 5 0">
                                 <Label Content="Cena zboží (Kč.)"/>
                                 <TextBox Name="txtNovyProduktCena" Width="100"/>
                             </StackPanel>
-                            
-                            <StackPanel>
+
+                            <StackPanel Margin="0 0 5 0">
                                 <Label Content="Množství"/>
                                 <TextBox Name="txtNovyProduktMnozstvi" Width="100"/>
                             </StackPanel>
@@ -63,7 +63,6 @@
 
             <TabItem Header="Nastavení">
                 <Grid Background="#FFFFFF"/>
-
             </TabItem>
 
         </TabControl>

@@ -29,6 +29,7 @@ namespace ProjektPVA1
             Sklad.Add(new Produkt("Kubík", 45, 40));
 
             dgSklad.ItemsSource = Sklad;
+            lblProduktyNaProdej.ItemsSource = Sklad;
         }
 
         //tlacitko pridat do skladu
@@ -38,9 +39,10 @@ namespace ProjektPVA1
                 && double.TryParse(txtNovyProduktCena.Text, out double cena)
                 && int.TryParse(txtNovyProduktMnozstvi.Text, out int mnozstvi))
             {
-                Sklad.Add(new Produkt(txtNovyProduktName.Text, cena, 10));
+                Sklad.Add(new Produkt(txtNovyProduktName.Text, cena, mnozstvi));
                 txtNovyProduktCena.Clear();
                 txtNovyProduktName.Clear();
+                txtNovyProduktMnozstvi.Clear();
             }
             else
             {
@@ -50,6 +52,12 @@ namespace ProjektPVA1
 
         //tlacitko pridat do kosiku
         private void btnPridejDoKosiku_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //tlacitko smazat z kosiku
+        private void btnDeleteCart_Click(object sender, RoutedEventArgs e)
         {
 
         }
