@@ -31,7 +31,7 @@ namespace ProjektPVA1
             dgSklad.ItemsSource = Sklad;
         }
 
-        // tlacitko pridat do skladu
+        //tlacitko pridat do skladu
         private void btnPridatDoSkladu_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(txtNovyProduktName.Text) && double.TryParse(txtNovyProduktCena.Text, out double cena))
@@ -46,7 +46,7 @@ namespace ProjektPVA1
             }
         }
 
-        // tlacitko pridat do kosiku
+        //tlacitko pridat do kosiku
         private void btnPridejDoKosiku_Click(object sender, RoutedEventArgs e)
         {
 
